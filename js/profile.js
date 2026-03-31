@@ -15,7 +15,18 @@
  *******************************************************/
 
 //TODO: Place one object here.
-
+const SAVIOR = {
+    name: "emily",
+    age: "20",
+    location: "wonderland",
+    hobbies: ["solving world hunger", "✨java", "🌸javascript"],
+    type_of_companion: "dragon",
+    companion: {
+        name: "feuerspucki",
+        age: "50",
+        color: "rainbow"
+    }
+}
 /*******************************************************
  *   DO NOT CHANGE THE CODE BELOW!
  *******************************************************/

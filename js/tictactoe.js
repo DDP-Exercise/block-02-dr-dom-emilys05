@@ -21,12 +21,13 @@ const X = "Savior (X)";
 const O = "Dr. DOM (O)";
 
 //Some of your epic battles:
-const BATTLEFIELD =
+/*const BATTLEFIELD =
     [
         [O, X, O],
         [X, X, X],
         [O, O, X],
-    ];
+    ];*/
+
 // const BATTLEFIELD =
 //     [
 //         [null, X, X],
@@ -68,3 +69,69 @@ const BATTLEFIELD =
 // Check Vertical
 // Check Main Diagonal
 // Check Anti Diagonal
+
+
+let n = BATTLEFIELD.length;
+let winner = null;
+
+
+//Horizontal
+
+for (let i = 0; i < n; i++) {
+    let counter_x = 0;
+    let counter_o = 0;
+
+    for (let j = 0; j < n; j++) {
+        if (BATTLEFIELD[i][j] === X) counter_x++;
+        if (BATTLEFIELD[i][j] === O) counter_o++;
+    }
+
+    if (counter_x === n) winner = "Savior wins (horizontal)!";
+    if (counter_o === n) winner = "Dr. DOM wins (horizontal)!";
+}
+
+
+//Vertical
+for (let j = 0; j < n; j++) {
+    let counter_x = 0;
+    let counter_o = 0;
+
+    for (let i = 0; i < n; i++) {
+        if (BATTLEFIELD[i][j] === X) counter_x++;
+        if (BATTLEFIELD[i][j] === O) counter_o++;
+    }
+
+    if (counter_x === n) winner = "Savior wins (vertical)!";
+    if (counter_o === n) winner = "Dr. DOM wins (vertical)!";
+}
+
+
+//Main Diagonal
+let counter_x = 0;
+let counter_o = 0;
+for (let i = 0; i < n; i++) {
+    if (BATTLEFIELD[i][i] === X) counter_x++;
+    if (BATTLEFIELD[i][i] === O) counter_o++;
+}
+if (counter_x === n) winner = "Savior wins (main diagonal)!";
+if (counter_o === n) winner = "Dr. DOM wins (main diagonal)!";
+
+
+//Anti Diagonal
+counter_x = 0;
+counter_o = 0;
+for (let i = 0; i < n; i++) {
+    if (BATTLEFIELD[i][n - 1 - i] === X) counter_x++;
+    if (BATTLEFIELD[i][n - 1 - i] === O) counter_o++;
+}
+if (counter_x === n) winner = "Savior wins (anti diagonal)!";
+if (counter_o === n) winner = "Dr. DOM wins (anti diagonal)!";
+
+
+if (winner) {
+    console.log(winner);
+} else {
+    console.log("No winner yet!");
+}
+
+

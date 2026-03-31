@@ -27,6 +27,18 @@
  * without the risk of catching an eye infection!
  */
 
+const textelement = document.getElementById("message");
+textelement.style.color = "black";
+textelement.style.backgroundColor = "white";
+textelement.textContent = "✨we fixed this one for you aswell✨";
+
+const textelement2 = document.querySelectorAll("p");
+textelement2[1].style.color = "black";
+textelement2[1].style.backgroundColor = "white";
+textelement2[1].textContent = "the list of our heroes (that we freed💅🏻)";
+
+
+
 
 
 
@@ -35,8 +47,13 @@
  * Great job! So much easier on the eyes! Now, let's tackle those minions!
  * Can't we just remove them all together?
  */
+const minions = document.querySelectorAll("li");
 
-
+for (const minion of minions) {
+    if (!minion.closest("#heroes_of_the_web")){
+        minion.remove();
+    }
+}
 
 
 /**
@@ -44,6 +61,12 @@
  * Wow! You are so powerful! Quick now, set our heroes of the web free!
  * And while at it, let the world know again, that they are back in town!
  */
+const heroes = document.getElementById("heroes_of_the_web");
+heroes.style.visibility = "visible";
+
+const announcement = document.createElement("p");
+announcement.textContent = "hello world! the heroes are back in town, we set them free!!";
+heroes.after(announcement);
 
 
 
@@ -53,6 +76,8 @@
  * Do your thing, savior!
  */
 
+const titleElement = document.getElementById("title");
+titleElement.textContent = "🌺🌸✨To the heroes that we safed✨🌸🌺!";
 
 
 /**
